@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Base64 Encoder & Decoder</title>
+</head>
+<body>
+
+<h2>Base64 Encoder & Decoder</h2>
+
+<textarea id="input" rows="10" cols="60" placeholder="এখানে টেক্সট লিখুন"></textarea>
+
+<br><br>
+
+<button onclick="encodeText()">Encode</button>
+<button onclick="decodeText()">Decode</button>
+
+<br><br>
+
+<textarea id="output" rows="10" cols="60" placeholder="ফলাফল এখানে দেখাবে"></textarea>
+
+<script>
+function encodeText() {
+    try {
+        document.getElementById("output").value =
+            btoa(document.getElementById("input").value);
+    } catch(e) {
+        alert("Encode করা সম্ভব হয়নি");
+    }
+}
+
+function decodeText() {
+    try {
+        document.getElementById("output").value =
+            atob(document.getElementById("input").value);
+    } catch(e) {
+        alert("ভুল Base64 String");
+    }
+}
+</script>
+
+</body>
+</html>
